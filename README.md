@@ -6,3 +6,12 @@ This is based on [a question asked on stack overflow](https://stackoverflow.com/
 Notice in the code, I've used 2 types of regular expression declaration. There's one with `/` literals while the other creates an object instance. This is done deliberately to optimize processing time. With the `/` literals, the compiler optimizes the code at compile time. On the other hand, creating an instance of RegExp will cause the compiler to process that expression during run-time. If the regular expression is known ahead of time, it is more efficent to use the literals to compile the code ahead of time. If the regular expression depends on user input, the run-time method is preferred.
 
 My function assumes that the words in an HTML paragraph have already been separated by spaces. All that is being passed in is the user's search word into the `originalWord` argument and each word that is in the HTML paragraph to be `newWord` argument.
+
+## Requirements
+1. Node JS / Any modern browser capable of loading ES2015 JavaScript
+
+## Usage
+Node JS
+1. Clone the repository
+2. Navigate to the folder
+3. Execute `node highlight_word.js`
