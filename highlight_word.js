@@ -1,16 +1,16 @@
 //  This function will return the HTML for highlighting the word if successful
 //  Othewise, it will return undefined
 
-function highlightWord(originalWord, newWord){
+function highlightWord(searchWord, paragraphWord){
   let re = /[.,:;]+$/
-  if (originalWord === newWord){
-    return `<span class="highlight">${newWord}</span>`
-  }else if (re.test(newWord)){
-    let contains = new RegExp (`^${originalWord}`);
-    let nonContainingPart = new RegExp (`[^${originalWord}]+`)
-    if (contains.test(newWord)){
-      let word = newWord.match(contains)
-      let punctuation = newWord.match(nonContainingPart)
+  if (searchWord === paragraphWord){
+    return `<span class="highlight">${searchWord}</span>`
+  }else if (re.test(paragraphWord)){
+    let contains = new RegExp (`^${searchWord}`);
+    let nonContainingPart = new RegExp (`[^${searchWord}]+`)
+    if (contains.test(paragraphWord)){
+      let word = paragraphWord.match(contains)
+      let punctuation = paragraphWord.match(nonContainingPart)
       //word = [ 'book', index: 0, input: 'book...' ]
       //punctuation = [ '...', index: 4, input: 'book...' ]
       return `<span class="highlight">${word}</span>${punctuation}`
